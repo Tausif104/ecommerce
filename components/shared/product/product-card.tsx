@@ -7,8 +7,9 @@ import {
 } from '@/components/ui/card'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Product } from '@/types'
 
-const ProductCard = ({ product }: { product: any }) => {
+const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card>
       <Link href={`/product/${product.slug}`}>
