@@ -1,7 +1,6 @@
 "use server"
 
 import { prisma } from '../prisma'
-import { convertToPlainObject } from '../utils'
 
 
 // get all products
@@ -18,6 +17,5 @@ export const getLatestProducts = async () => {
 
 // get single product by slug
 export const getProductBySlug = async (slug: string) => {
-  const product = await prisma.product.findFirst({ where: { slug: slug } })
-  return product
+  return await prisma.product.findFirst({ where: { slug: slug } })
 }
