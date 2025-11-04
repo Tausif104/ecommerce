@@ -12,7 +12,9 @@ const SingleProduct = async (props: {
   const { slug } = await props.params
 
   // const product = await getProductBySlug(slug)
-  const product = await prisma.product.findFirst({ where: { slug } })
+  const productRaw = await prisma.product.findFirst({ where: { slug } })
+
+  const product = JSON.parse(JSON.stringify(productRaw))
 
   if (!product) notFound()
 
