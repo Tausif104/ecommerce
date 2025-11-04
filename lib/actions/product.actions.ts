@@ -17,12 +17,5 @@ export const getLatestProducts = async () => {
 
 // get single product by slug
 export const getProductBySlug = async (slug: string) => {
-  const product = await prisma.product.findUnique({ where: { slug } });
-  if (!product) throw new Error(`Product with slug "${slug}" not found`);
-
-  return {
-    ...product,
-    id: product.id.toString(), // if id is BigInt
-    createdAt: product.createdAt.toISOString(),
-  };
-};
+  return await prisma.product.findFirst({ where: { slug: slug } })
+}
