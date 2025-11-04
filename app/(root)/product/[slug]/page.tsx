@@ -12,7 +12,7 @@ const SingleProduct = async (props: {
 
   const product = await getProductBySlug(slug)
 
-  if (!product) notFound()
+  // if (!product) notFound()
 
   return (
     <>
