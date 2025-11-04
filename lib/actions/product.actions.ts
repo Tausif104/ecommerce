@@ -1,10 +1,8 @@
 "use server"
 
-import { PrismaClient } from '../generated/prisma/client'
+import { prisma } from '../prisma'
 import { convertToPlainObject } from '../utils'
 
-// initialize prisma client
-const prisma = new PrismaClient()
 
 // get all products
 export const getLatestProducts = async () => {
@@ -22,5 +20,4 @@ export const getLatestProducts = async () => {
 export const getProductBySlug = async (slug: string) => {
   const product = await prisma.product.findFirst({ where: { slug: slug } })
   return product
-
 }

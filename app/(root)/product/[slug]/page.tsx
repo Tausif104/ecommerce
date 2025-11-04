@@ -10,9 +10,9 @@ const SingleProduct = async (props: {
 }) => {
   const { slug } = await props.params
 
-  // const product = await getProductBySlug(slug)
+  const product = await getProductBySlug(slug)
 
-  // if (!product) notFound()
+  if (!product) notFound()
 
   return (
     <>
@@ -21,7 +21,7 @@ const SingleProduct = async (props: {
           {/* images col */}
           <div className='col-span-2'>
             {slug}
-            {/* <ProductImage images={product.images} /> */}
+            <ProductImage images={product.images} />
           </div>
           {/* code goes here */}
         </div>
