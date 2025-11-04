@@ -10,7 +10,7 @@ const SingleProduct = async (props: {
 }) => {
   const { slug } = await props.params
 
-  const product = await getProductBySlug(slug)
+  // const product = await getProductBySlug(slug)
 
   // if (!product) notFound()
 
