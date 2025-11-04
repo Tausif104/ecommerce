@@ -20,7 +20,8 @@ const SingleProduct = async (props: {
         <div className='grid grid-cols-1 md:grid-cols-5'>
           {/* images col */}
           <div className='col-span-2'>
-            <ProductImage images={product.images} />
+            {slug}
+            {/* <ProductImage images={product.images} /> */}
           </div>
           {/* code goes here */}
         </div>
