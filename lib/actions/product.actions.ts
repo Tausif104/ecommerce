@@ -17,5 +17,6 @@ export const getLatestProducts = async () => {
 
 // get single product by slug
 export const getProductBySlug = async (slug: string) => {
-  return await prisma.product.findFirst({ where: { slug: slug } })
+  const product = await prisma.product.findFirst({ where: { slug: slug } })
+  return product ? JSON.parse(JSON.stringify(product)) : null
 }
