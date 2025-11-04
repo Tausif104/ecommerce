@@ -30,11 +30,11 @@ const ProductDetailsPage = async (props: {
               </p>
               <h1 className='h3-bold'>{product.name}</h1>
               <p>
-                {Number(product.rating)} of {product.numReviews} Reviews
+                {product.rating} of {product.numReviews} Reviews
               </p>
               <div className='flex flex-col sm:flex-row sm:items-center gap-3'>
                 <p className='bg-green-100 text-green-700 w-24 text-center py-3 rounded-full font-bold'>
-                  ${Number(product.price)}
+                  ${product.price}
                 </p>
               </div>
             </div>
@@ -52,7 +52,7 @@ const ProductDetailsPage = async (props: {
                 <div className='mb-2 flex justify-between'>
                   <div>Price</div>
                   <div>
-                    <p className='font-semibold'>${Number(product.price)}</p>
+                    <p className='font-semibold'>${product.price}</p>
                   </div>
                 </div>
                 <div className='mb-3 flex justify-between'>

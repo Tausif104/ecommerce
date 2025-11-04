@@ -14,7 +14,7 @@ export const getLatestProducts = async () => {
     orderBy: { createdAt: 'desc' }
   })
 
-  return convertToPlainObject(data)
+  return data
 }
 
 
