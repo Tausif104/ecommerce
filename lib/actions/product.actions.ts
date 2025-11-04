@@ -11,6 +11,7 @@ export const getLatestProducts = async () => {
 
   const data = await prisma.product.findMany({
     take: 4,
+    orderBy: { createdAt: 'desc' }
   })
 
   return convertToPlainObject(data)
