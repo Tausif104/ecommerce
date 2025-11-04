@@ -7,7 +7,7 @@ import { prisma } from '../prisma'
 export const getLatestProducts = async () => {
 
   const data = await prisma.product.findMany({
-    take: 4,
+    take: 6,
     orderBy: { createdAt: 'desc' }
   })
 
@@ -17,6 +17,5 @@ export const getLatestProducts = async () => {
 
 // get single product by slug
 export const getProductBySlug = async (slug: string) => {
-  const product = await prisma.product.findFirst({ where: { slug: slug } })
-  return product ? JSON.parse(JSON.stringify(product)) : null
+  return await prisma.product.findFirst({ where: { slug } })
 }
