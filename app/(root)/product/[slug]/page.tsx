@@ -4,13 +4,15 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import ProductImage from '@/components/shared/product/product-images'
+import { prisma } from '@/lib/prisma'
 
 const SingleProduct = async (props: {
   params: { slug: string } | Promise<{ slug: string }>
 }) => {
   const { slug } = await props.params
 
-  const product = await getProductBySlug(slug)
+  // const product = await getProductBySlug(slug)
+  const product = await prisma.product.findFirst({ where: { slug } })
 
   if (!product) notFound()
 
