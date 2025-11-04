@@ -5,10 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import ProductImage from '@/components/shared/product/product-images'
 
-const ProductDetailsPage = async (props: {
-  params: Promise<{ slug: string }>
-}) => {
-  const { slug } = await props.params
+const ProductDetailsPage = async (props: { params: { slug: string } }) => {
+  const { slug } = props.params
 
   const product = await getProductBySlug(slug)
 
